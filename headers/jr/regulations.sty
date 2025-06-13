@@ -1,0 +1,76 @@
+% JR各社の規則等の条文のスタイル定義
+
+\usepackage{xparse} % for NewDocumentCommand
+
+\usepackage{./colors/jr_colors}
+\usepackage{./box}
+
+\usepackage{packages/nard-tex-law-package/article_number}
+
+% 本州3社
+\NewDocumentCommand{\ArticleJRHonshu}{m o}{%
+  \JRArticle{%
+    \JREast\JRCentral\JRWest}{% ロゴ
+    #1}[% 条文番号+枝番
+    #2]% 内容
+}
+
+% JR北海道
+\NewDocumentCommand{\ArticleJRHokkaido}{m o}{%
+  \JRArticle{%
+    \JRHokkaido}{% ロゴ
+    #1}[% 条文番号+枝番
+    #2]% 内容
+}
+
+% JR東日本
+\NewDocumentCommand{\ArticleJREast}{m o}{%
+  \JRArticle{%
+    \JREast}{% ロゴ
+    #1}[% 条文番号+枝番
+    #2]% 内容
+}
+
+% JR東海
+\NewDocumentCommand{\ArticleJRCentral}{m o}{%
+  \JRArticle{%
+    \JRCentral}{% ロゴ
+    #1}[% 条文番号+枝番
+    #2]% 内容
+}
+
+% JR西日本
+\NewDocumentCommand{\ArticleJRWest}{m o}{%
+  \JRArticle{%
+    \JRWest}{% ロゴ
+    #1}[% 条文番号+枝番
+    #2]% 内容
+}
+
+% JR四国
+\NewDocumentCommand{\ArticleJRShikoku}{m o}{%
+  \JRArticle{%
+    \JRShikoku}{% ロゴ
+    #1}[% 条文番号+枝番
+    #2]% 内容
+}
+
+% JR九州
+\NewDocumentCommand{\ArticleJRKyushu}{m o}{%
+  \JRArticle{%
+    \JRKyushu}{% ロゴ
+    #1}[% 条文番号+枝番
+    #2]% 内容
+}
+
+% ---- private command ----
+
+\NewDocumentCommand{\JRArticle}{m m o}{
+  \IfNoValueTF{#3}{% if 第3引数（内容）が存在しないとき（引数が2つのとき）
+    % 何もしない
+  }{% else - 第3引数（内容）が存在するとき（引数が3つのとき）
+    % 第2引数を条文番号、第3引数を内容とする
+    （{#3}）\\[3pt]% 内容を表示して改行
+  }
+  #1\,#2% ロゴ、条文番号
+}
