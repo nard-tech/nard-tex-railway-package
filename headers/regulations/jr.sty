@@ -1,0 +1,229 @@
+% -------- JR各社の規則等の条文のスタイル定義
+
+% - colors/jr.sty
+% - headers/jr.sty
+% が必須
+
+% ---- 本州3社
+
+% n条
+\newcommand{\ArticleJRHonshu}[1]{%
+  \qquad \\[-6pt] %
+  {\JREast}{\JRCentral}{\JRWest}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRHonshu}[2]{%
+  \qquad \\[-6pt] %
+  （#2） \\[3pt] %
+  {\JREast}{\JRCentral}{\JRWest}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm
+\newcommand{\ArticleSubJRHonshu}[2]{%
+  \qquad \\[-6pt] %
+  {\JREast}{\JRCentral}{\JRWest}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRHonshu}[3]{%
+  \qquad \\[-6pt] %
+  （#3） \\[3pt] %
+  {\JREast}{\JRCentral}{\JRWest}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% ---- JR北海道
+
+% n条
+\newcommand{\ArticleJRHokkaido}[1]{%
+  \qquad \\[-6pt] %
+  {\JRHokkaido}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm
+\newcommand{\ArticleSubJRHokkaido}[2]{%
+  \qquad \\[-6pt] %
+  {\JRHokkaido}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRHokkaido}[2]{%
+  \qquad \\[-6pt] %
+  （#2） \\[3pt] %
+  {\JRHokkaido}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRHokkaido}[3]{%
+  \qquad \\[-6pt] %
+  （#3） \\[3pt] %
+  {\JRHokkaido}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% ---- JR東日本
+
+% n条
+\newcommand{\ArticleJREast}[1]{%
+  \qquad \\[-6pt] %
+  {\JREast}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm
+\newcommand{\ArticleSubJREast}[2]{%
+  \qquad \\[-6pt] %
+  {\JREast}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJREast}[2]{%
+  \qquad \\[-6pt] %
+  （#2） \\[3pt] %
+  {\JREast}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJREast}[3]{%
+  \qquad \\[-6pt] %
+  （#3） \\[3pt] %
+  {\JREast}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% ---- JR東海
+
+% n条
+\newcommand{\ArticleJRCentral}[1]{%
+  \qquad \\[-6pt] %
+  {\JRCentral}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm
+\newcommand{\ArticleSubJRCentral}[2]{%
+  \qquad \\[-6pt] %
+  {\JRCentral}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRCentral}[2]{%
+  \qquad \\[-6pt] %
+  （#2） \\[3pt] %
+  {\JRCentral}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRCentral}[3]{%
+  \qquad \\[-6pt] %
+  （#3） \\[3pt] %
+  {\JRCentral}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% ---- JR西日本
+
+% n条
+\newcommand{\ArticleJRWest}[1]{%
+  \qquad \\[-6pt] %
+  {\JRWest}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm
+\newcommand{\ArticleSubJRWest}[2]{%
+  \qquad \\[-6pt] %
+  {\JRWest}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRWest}[2]{%
+  \qquad \\[-6pt] %
+  （#2） \\[3pt] %
+  {\JRWest}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRWest}[3]{%
+  \qquad \\[-6pt] %
+  （#3） \\[3pt] %
+  {\JRWest}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% ---- JR四国
+
+% n条
+\newcommand{\ArticleJRShikoku}[1]{%
+  \qquad \\[-6pt] %
+  {\JRShikoku}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm
+\newcommand{\ArticleSubJRShikoku}[2]{%
+  \qquad \\[-6pt] %
+  {\JRShikoku}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRShikoku}[2]{%
+  \qquad \\[-6pt] %
+  （#2） \\[3pt] %
+  {\JRShikoku}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRShikoku}[3]{%
+  \qquad \\[-6pt] %
+  （#3） \\[3pt] %
+  {\JRShikoku}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% ---- JR九州
+
+% n条
+\newcommand{\ArticleJRKyushu}[1]{%
+  \qquad \\[-6pt] %
+  {\JRKyushu}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm
+\newcommand{\ArticleSubJRKyushu}[2]{%
+  \qquad \\[-6pt] %
+  {\JRKyushu}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRKyushu}[2]{%
+  \qquad \\[-6pt] %
+  （#2） \\[3pt] %
+  {\JRKyushu}\,\textgt{第\textsf{#1}条}%
+  \\[-18pt] %
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRKyushu}[3]{%
+  \qquad \\[-6pt] %
+  （#3） \\[3pt] %
+  {\JRKyushu}\,\textgt{第\textsf{#1}条の\textsf{#2}}%
+  \\[-18pt] %
+}
