@@ -1,0 +1,269 @@
+% -------- JR各社の規則等の条文のスタイル定義
+
+\usepackage{./colors/jr}
+\usepackage{./box}
+
+% ---- 内部で使用するコマンド
+
+\newcommand{\ArticleNumber}[1]{\textgt{第\textsf{#1}条}}
+\newcommand{\ArticleNumberSub}[2]{\textgt{第\textsf{#1}条の\textsf{#2}}}
+
+% n条
+\newcommand{\Article}[2]{%
+  #1\,\ArticleNumber{#2}% ロゴ、条文番号
+}
+
+% n条のm
+\newcommand{\ArticleSub}[3]{%
+  #1\,\ArticleNumberSub{#2}{#3}% ロゴ、条文番号、枝番
+}
+
+% n条 + 内容
+\newcommand{\ArticleContent}[3]{%
+  （{#3}）\\[3pt]% 内容
+  #1\,\ArticleNumber{#2}% ロゴ、条文番号
+}
+
+% n条のm + 内容
+\newcommand{\ArticleContentSub}[4]{%
+  （{#4}）\\[3pt]% 内容
+  #1\,\ArticleNumber{#2}{#3}% ロゴ、条文番号、枝番
+}
+
+% ---- 本州3社
+
+% n条
+\newcommand{\ArticleJRHonshu}[1]{%
+  \Article{%
+    \JREast\JRCentral\JRWest}{%
+    #1}%
+}
+
+% n条のm
+\newcommand{\ArticleSubJRHonshu}[2]{%
+  \ArticleSub{%
+    \JREast\JRCentral\JRWest}{%
+    #1}{%
+    #2}%
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRHonshu}[2]{%
+  \ArticleContent{%
+    \JREast\JRCentral\JRWest}{%
+    #1}{% 条文番号
+    #2}% 内容
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRHonshu}[3]{%
+  \ArticleContentSub{%
+    \JREast\JRCentral\JRWest}{%
+    #1}{% 条文番号
+    #2}{% 枝番
+    #3}% 内容
+}
+
+% ---- JR北海道
+
+% n条
+\newcommand{\ArticleJRHokkaido}[1]{%
+  \Article{%
+    \JRHokkaido}{% ロゴ
+    #1}% 条文番号
+}
+
+% n条のm
+\newcommand{\ArticleSubJRHokkaido}[2]{%
+  \ArticleSub{%
+    \JRHokkaido}{% ロゴ
+    #1}{% 条文番号
+    #2}% 枝番
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRHokkaido}[2]{%
+  \ArticleContent{%
+    \JRHokkaido}{% ロゴ
+    #1}{% 条文番号
+    #2}% 内容
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRHokkaido}[3]{%
+  \ArticleContentSub{%
+    \JRHokkaido}{% ロゴ
+    #1}{% 条文番号
+    #2}{% 枝番
+    #3}% 内容
+}
+
+% ---- JR東日本
+
+% n条
+\newcommand{\ArticleJREast}[1]{%
+  \Article{%
+    \JREast}{% ロゴ
+    #1}% 条文番号
+}
+
+% n条のm
+\newcommand{\ArticleSubJREast}[2]{%
+  \ArticleSub{%
+    \JREast}{% ロゴ
+    #1}{% 条文番号
+    #2}% 枝番
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJREast}[2]{%
+  \ArticleContent{%
+    \JREast}{% ロゴ
+    #1}{% 条文番号
+    #2}% 内容
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJREast}[3]{%
+  \ArticleContentSub{%
+    \JREast}{% ロゴ
+    #1}{% 条文番号
+    #2}{% 枝番
+    #3}% 内容
+}
+
+% ---- JR東海
+
+% n条
+\newcommand{\ArticleJRCentral}[1]{%
+  \Article{%
+    \JRCentral}{% ロゴ
+    #1}% 条文番号
+}
+
+% n条のm
+\newcommand{\ArticleSubJRCentral}[2]{%
+  \ArticleSub{%
+    \JRCentral}{% ロゴ
+    #1}{% 条文番号
+    #2}% 枝番
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRCentral}[2]{%
+  \ArticleContent{%
+    \JRCentral}{% ロゴ
+    #1}{% 条文番号
+    #2}% 内容
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRCentral}[3]{%
+  \ArticleContentSub{%
+    \JRCentral}{% ロゴ
+    #1}{% 条文番号
+    #2}{% 枝番
+    #3}% 内容
+}
+
+% ---- JR西日本
+
+% n条
+\newcommand{\ArticleJRWest}[1]{%
+  \Article{%
+    \JRWest}{% ロゴ
+    #1}% 条文番号
+}
+
+% n条のm
+\newcommand{\ArticleSubJRWest}[2]{%
+  \ArticleSub{%
+    \JRWest}{% ロゴ
+    #1}{% 条文番号
+    #2}% 枝番
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRWest}[2]{%
+  \ArticleContent{%
+    \JRWest}{% ロゴ
+    #1}{% 条文番号
+    #2}% 内容
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRWest}[3]{%
+  \ArticleContentSub{%
+    \JRWest}{% ロゴ
+    #1}{% 条文番号
+    #2}{% 枝番
+    #3}% 内容
+}
+
+% ---- JR四国
+
+% n条
+\newcommand{\ArticleJRShikoku}[1]{%
+  \Article{%
+    \JRShikoku}{% ロゴ
+    #1}% 条文番号
+}
+
+% n条のm
+\newcommand{\ArticleSubJRShikoku}[2]{%
+  \ArticleSub{%
+    \JRShikoku}{% ロゴ
+    #1}{% 条文番号
+    #2}% 枝番
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRShikoku}[2]{%
+  \ArticleContent{%
+    \JRShikoku}{% ロゴ
+    #1}{% 条文番号
+    #2}% 内容
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRShikoku}[3]{%
+  \ArticleContentSub{%
+    \JRShikoku}{% ロゴ
+    #1}{% 条文番号
+    #2}{% 枝番
+    #3}% 内容
+}
+
+% ---- JR九州
+
+% n条
+\newcommand{\ArticleJRKyushu}[1]{%
+  \Article{%
+    \JRKyushu}{% ロゴ
+    #1}% 条文番号
+}
+
+% n条のm
+\newcommand{\ArticleSubJRKyushu}[2]{%
+  \ArticleSub{%
+    \JRKyushu}{% ロゴ
+    #1}{% 条文番号
+    #2}% 枝番
+}
+
+% n条 + 内容
+\newcommand{\ArticleContentJRKyushu}[2]{%
+  \ArticleContent{%
+    \JRKyushu}{% ロゴ
+    #1}{% 条文番号
+    #2}% 内容
+}
+
+% n条のm + 内容
+\newcommand{\ArticleSubContentJRKyushu}[3]{%
+  \ArticleContentSub{%
+    \JRKyushu}{% ロゴ
+    #1}{% 条文番号
+    #2}{% 枝番
+    #3}% 内容
+}
