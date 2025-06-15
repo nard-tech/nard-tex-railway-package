@@ -1,0 +1,507 @@
+\documentclass[oneside,10pt,a4paper]{jsarticle}
+
+\usepackage[dvips]{graphicx}
+\usepackage[dvips]{graphicx,color}
+\usepackage{txfonts}
+
+\usepackage{./colors/jr}
+\usepackage{./headers/jr/box}
+\usepackage{./headers/jr/regulations}
+\usepackage{./words}
+
+% \usepackage{verbatimbox}
+% % \usepackage{newverbs}
+% % \usepackage[T1]{fontenc}
+% \long\def\CommandName#1{%
+% \colorbox[gray]{0.9}{\theverbbox}
+% }
+
+% \usepackage{fancyvrb}
+\usepackage{ascmac}
+
+\begin{document}
+
+% \colorbox[gray]{0.9}{\verb|\CommandName|}
+
+  \section{JR各社のコマンド}
+
+  \subsection{JR北海道}
+
+  \begin{itemize}
+    \item \verb|\JRHokkaido| - \JRHokkaido
+    \item \verb|\ArticleJRHokkaido{条文番号}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleJRHokkaido{1}
+\begin{quote}
+  これはJR北海道の第1条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHokkaido{1}
+        \begin{quote}
+          これはJR北海道の第1条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubJRHokkaido{条文番号}{枝番}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubJRHokkaido{1}{2}
+\begin{quote}
+  これはJR北海道の第1条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubJRHokkaido{1}{2}
+        \begin{quote}
+          これはJR北海道の第1条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleContentJRHokkaido{条文番号}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleContentJRHokkaido{2}{テスト JR北海道 2}
+\begin{quote}
+  これはJR北海道の第2条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleContentJRHokkaido{2}{テスト JR北海道 2}
+        \begin{quote}
+          これはJR北海道の第2条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubContentJRHokkaido{条文番号}{枝番}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubContentJRHokkaido{2}{2}{テスト JR北海道 2-2}
+\begin{quote}
+  これはJR北海道の第2条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubContentJRHokkaido{2}{2}{テスト JR北海道 2-2}
+        \begin{quote}
+          これはJR北海道の第2条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+  \newpage
+
+  \subsection{JR東日本}
+
+  \begin{itemize}
+    \item \verb|\JREast| - \JREast
+    \item \verb|\ArticleJREast{条文番号}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleJREast{3}
+\begin{quote}
+  これはJR東日本の第3条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJREast{3}
+        \begin{quote}
+          これはJR東日本の第3条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubJREast{条文番号}{枝番}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubJREast{3}{2}
+\begin{quote}
+  これはJR東日本の第3条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubJREast{3}{2}
+        \begin{quote}
+          これはJR東日本の第3条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleContentJREast{条文番号}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleContentJREast{4}{テスト JR東日本 4}
+\begin{quote}
+  これはJR東日本の第4条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleContentJREast{4}{テスト JR東日本 4}
+        \begin{quote}
+          これはJR東日本の第4条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubContentJREast{条文番号}{枝番}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubContentJREast{4}{2}{テスト JR東日本 4-2}
+\begin{quote}
+  これはJR東日本の第4条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubContentJREast{4}{2}{テスト JR東日本 4-2}
+        \begin{quote}
+          これはJR東日本の第4条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR東海}
+
+  \begin{itemize}
+    \item \verb|\JRCentral| - \JRCentral
+    \item \verb|\ArticleJRCentral{条文番号}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleJRCentral{5}
+\begin{quote}
+  これはJR東海の第5条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRCentral{5}
+        \begin{quote}
+          これはJR東海の第5条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubJRCentral{条文番号}{枝番}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubJRCentral{5}{2}
+\begin{quote}
+  これはJR東海の第5条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubJRCentral{5}{2}
+        \begin{quote}
+          これはJR東海の第5条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleContentJRCentral{条文番号}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleContentJRCentral{6}{テスト JR東海 6}
+\begin{quote}
+  これはJR東海の第6条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleContentJRCentral{6}{テスト JR東海 6}
+        \begin{quote}
+          これはJR東海の第6条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubContentJRCentral{条文番号}{枝番}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubContentJRCentral{6}{2}{テスト JR東海 6-2}
+\begin{quote}
+  これはJR東海の第6条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubContentJRCentral{6}{2}{テスト JR東海 6-2}
+        \begin{quote}
+          これはJR東海の第6条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR西日本}
+
+  \begin{itemize}
+    \item \verb|\JRWest| - \JRWest
+    \item \verb|\ArticleJRWest{条文番号}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleJRWest{7}
+\begin{quote}
+  これはJR西日本の第7条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRWest{7}
+        \begin{quote}
+          これはJR西日本の第7条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubJRWest{条文番号}{枝番}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubJRWest{7}{2}
+\begin{quote}
+  これはJR西日本の第7条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubJRWest{7}{2}
+        \begin{quote}
+          これはJR西日本の第7条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleContentJRWest{条文番号}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleContentJRWest{8}{テスト JR西日本 8}
+\begin{quote}
+  これはJR西日本の第8条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleContentJRWest{8}{テスト JR西日本 8}
+        \begin{quote}
+          これはJR西日本の第8条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubContentJRWest{条文番号}{枝番}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubContentJRWest{8}{2}{テスト JR西日本 8-2}
+\begin{quote}
+  これはJR西日本の第8条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubContentJRWest{8}{2}{テスト JR西日本 8-2}
+        \begin{quote}
+          これはJR西日本の第8条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR四国}
+
+  \begin{itemize}
+    \item \verb|\JRShikoku| - \JRShikoku
+    \item \verb|\ArticleJRShikoku{条文番号}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleJRShikoku{9}
+\begin{quote}
+  これはJR四国の第9条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRShikoku{9}
+        \begin{quote}
+          これはJR四国の第9条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubJRShikoku{条文番号}{枝番}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubJRShikoku{9}{2}
+\begin{quote}
+  これはJR四国の第9条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubJRShikoku{9}{2}
+        \begin{quote}
+          これはJR四国の第9条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleContentJRShikoku{条文番号}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleContentJRShikoku{10}{テスト JR四国 10}
+\begin{quote}
+  これはJR四国の第10条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleContentJRShikoku{10}{テスト JR四国 10}
+        \begin{quote}
+          これはJR四国の第10条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubContentJRShikoku{条文番号}{枝番}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubContentJRShikoku{10}{2}{テスト JR四国 10-2}
+\begin{quote}
+  これはJR四国の第10条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubContentJRShikoku{10}{2}{テスト JR四国 10-2}
+        \begin{quote}
+          これはJR四国の第10条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR九州}
+
+  \begin{itemize}
+    \item \verb|\JRKyushu| - \JRKyushu
+    \item \verb|\ArticleJRKyushu{条文番号}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleJRKyushu{11}
+\begin{quote}
+  これはJR九州の第11条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRKyushu{11}
+        \begin{quote}
+          これはJR九州の第11条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubJRKyushu{条文番号}{枝番}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubJRKyushu{11}{2}
+\begin{quote}
+  これはJR九州の第11条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubJRKyushu{11}{2}
+        \begin{quote}
+          これはJR九州の第11条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleContentJRKyushu{条文番号}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleContentJRKyushu{12}{テスト JR九州 12}
+\begin{quote}
+  これはJR九州の第12条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleContentJRKyushu{12}{テスト JR九州 12}
+        \begin{quote}
+          これはJR九州の第12条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubContentJRKyushu{条文番号}{枝番}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubContentJRKyushu{12}{2}{テスト JR九州 12-2}
+\begin{quote}
+  これはJR九州の第12条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubContentJRKyushu{12}{2}{テスト JR九州 12-2}
+        \begin{quote}
+          これはJR九州の第12条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR本州３社}
+
+  \begin{itemize}
+    \item \verb|\JREast\JRCentral\JRWest| - \JREast\JRCentral\JRWest
+    \item \verb|\ArticleJRHonshu{条文番号}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleJRHonshu{13}
+\begin{quote}
+  これはJR本州3社の第13条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHonshu{13}
+        \begin{quote}
+          これはJR本州3社の第13条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubJRHonshu{条文番号}{枝番}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubJRHonshu{13}{2}
+\begin{quote}
+  これはJR本州3社の第13条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubJRHonshu{13}{2}
+        \begin{quote}
+          これはJR本州3社の第13条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleContentJRHonshu{条文番号}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleContentJRHonshu{14}{テスト 本州3社 14}
+\begin{quote}
+  これはJR本州3社の第14条の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleContentJRHonshu{14}{テスト 本州3社 14}
+        \begin{quote}
+          これはJR本州3社の第14条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleSubContentJRHonshu{条文番号}{枝番}{内容}|
+      \begin{itembox}[l]{コード}
+        \begin{verbatim}
+\ArticleSubContentJRHonshu{14}{2}{テスト 本州3社 14-2}
+\begin{quote}
+  これはJR本州3社の第14条の2の内容です。
+\end{quote}\end{verbatim}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleSubContentJRHonshu{14}{2}{テスト 本州3社 14-2}
+        \begin{quote}
+          これはJR本州3社の第14条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \subsection{JR貨物}
+
+  \begin{itemize}
+    \item \verb|\JRFreight| - \JRFreight
+  \end{itemize}
+
+  \newpage
+
+  \section{用語のコマンド}
+
+  \subsection{鉄道会社}
+
+  \begin{itemize}
+    \item \verb|\RyokakuKabu{北海道}| - \RyokakuKabu{北海道}
+    \item \verb|\RyokakuKabuLine{東日本}| - \RyokakuKabuLine{東日本}
+    \item \verb|\RyokakuLine{東海}| - \RyokakuLine{東海}
+    \item \verb|\Ryokaku{西日本}| - \Ryokaku{西日本}
+  \end{itemize}
+
+  \subsection{その他の鉄道用語}
+
+  \begin{itemize}
+    \item \verb|\LtdExp| - \LtdExp
+    \item \verb|\HaraiModoshi| - \HaraiModoshi
+    \item \verb|\ParenthesesShinkansen| - \ParenthesesShinkansen
+    \item \verb|快速 \ParenthesesAlphabet{Rapid}| - 快速 \ParenthesesAlphabet{Rapid}
+  \end{itemize}
+\end{document}
