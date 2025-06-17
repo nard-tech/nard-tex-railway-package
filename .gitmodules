@@ -1,0 +1,3 @@
+[submodule "packages/nard-tex-law-package"]
+	path = packages/nard-tex-law-package
+	url = git@github.com:nard-tech/nard-tex-law-package.git
