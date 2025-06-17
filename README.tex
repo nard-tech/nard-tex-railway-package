@@ -1,0 +1,540 @@
+\documentclass[oneside,10pt,a4paper]{jsarticle}
+
+\usepackage[dvips]{graphicx}
+\usepackage[dvips]{graphicx,color}
+\usepackage{txfonts} % textsf を正しく表示するため
+\usepackage{ascmac} % itembox を使いたいため
+
+\usepackage{./colors/jr_colors}
+\usepackage{./headers/jr/box}
+\usepackage{./headers/jr/regulations}
+\usepackage{./words}
+
+\usepackage{packages/nard-tex-color-package/color_commands}
+
+\title{nard-tex-railway-package}
+\author{Fujita Shu}
+
+\begin{document}
+  \maketitle
+
+  \section{colors/jr\_colors}
+
+  \verb|colors/jr_colors| パッケージを読み込むと、JR 各社の色に関する以下のような色名を使用できる。
+
+  \begin{itemize}
+    \item \verb|jrhokkaido| - \ColorName{jrhokkaido}{JR北海道の色} {\footnotesize \textsf{(\HexValue{03c13d}, \RGBValue{3}{193}{61})}}
+    \item \verb|jreast| - \ColorName{jreast}{JR東日本の色} {\footnotesize \textsf{(\HexValue{03c13d}, \RGBValue{3}{193}{61})}} \\
+      \textgt{注意}$:$ 本来の色 {\footnotesize \textsf{(\HexValue{378640}, \RGBValue{55}{134}{64})}} より明るめに調整している
+    \item \verb|jrcenteral| - \ColorName{jrcentral}{JR東海の色} {\footnotesize \textsf{(\HexValue{ff7e1c}, \RGBValue{255}{126}{28})}}
+    \item \verb|jrwest| - \ColorName{jrwest}{JR西日本の色} {\footnotesize \textsf{(\HexValue{0072ba}, \RGBValue{0}{114}{186})}}
+    \item \verb|jrshikoku| - \ColorName{jrshikoku}{JR四国の色} {\footnotesize \textsf{(\HexValue{00acd1}, \RGBValue{0}{172}{209})}}
+    \item \verb|jrkyushu| - \ColorName{jrkyushu}{JR九州の色} {\footnotesize \textsf{(\HexValue{f62e36}, \RGBValue{246}{46}{54})}}
+    \item \verb|jrfreight| - \ColorName{jrfreight}{JR貨物の色} {\footnotesize \textsf{(\HexValue{4a7b9c}, \RGBValue{74}{123}{156})}}
+  \end{itemize}
+
+  \newpage
+
+  \section{words}
+
+  \verb|words| パッケージを読み込むと、鉄道用語に関する以下のようなコマンドを使用できる。
+
+  \subsection{鉄道会社}
+
+  \begin{itemize}
+    \item \verb|\RyokakuKabu{北海道}| - \RyokakuKabu{北海道}
+    \item \verb|\RyokakuKabuLine{東日本}| - \RyokakuKabuLine{東日本}
+    \item \verb|\RyokakuLine{東海}| - \RyokakuLine{東海}
+    \item \verb|\Ryokaku{西日本}| - \Ryokaku{西日本}
+  \end{itemize}
+
+  \subsection{その他の鉄道用語}
+
+  \verb|words| パッケージを読み込むと、鉄道用語に関する以下のようなコマンドを使用できる。
+
+  \begin{itemize}
+    \item \verb|\LtdExp| - \LtdExp
+    \item \verb|\HaraiModoshi| - \HaraiModoshi
+    \item \verb|\ParenthesesShinkansen| - \ParenthesesShinkansen
+    \item \verb|快速 \ParenthesesAlphabet{Rapid}| - 快速 \ParenthesesAlphabet{Rapid}
+  \end{itemize}
+
+  \section{headers/jr/box}
+
+  \verb|headers/jr/box| パッケージを読み込むと、JR 各社の色がついた四角形を表示する以下のようなコマンドを使用できる。
+
+  \begin{itemize}
+    \item \verb|\JRHokkaido| - \JRHokkaido
+    \item \verb|\JREast| - \JREast
+    \item \verb|\JRCentral| - \JRCentral
+    \item \verb|\JRWest| - \JRWest
+    \item \verb|\JRShikoku| - \JRShikoku
+    \item \verb|\JRKyushu| - \JRKyushu
+    \item \verb|\JRFreight| - \JRFreight
+  \end{itemize}
+
+  \newpage
+
+  \section{headers/jr/regulations}
+
+  \verb|headers/jr/regulations| パッケージを読み込むと、JR各社の規約等に関するコマンドを使用できる。
+
+  \subsection{JR北海道}
+
+  \begin{itemize}
+    \item \verb|\ArticleJRHokkaido{\LawArticleNumber{条文番号}}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRHokkaido{\LawArticleNumber{1}}
+\begin{quote}
+  これはJR北海道の第1条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHokkaido{\LawArticleNumber{1}}
+        \begin{quote}
+          これはJR北海道の第1条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRHokkaido{\LawArticleNumber{条文番号}[枝番]}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRHokkaido{\LawArticleNumber{1}[2]}
+\begin{quote}
+  これはJR北海道の第1条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHokkaido{\LawArticleNumber{1}[2]}
+        \begin{quote}
+          これはJR北海道の第1条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleJRHokkaido{\LawArticleNumber{条文番号}}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRHokkaido{\LawArticleNumber{2}}[テスト JR北海道 2]
+\begin{quote}
+  これはJR北海道の第2条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHokkaido{\LawArticleNumber{2}}[テスト JR北海道 2]
+        \begin{quote}
+          これはJR北海道の第2条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRHokkaido{\LawArticleNumber{条文番号}[枝番]}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRHokkaido{\LawArticleNumber{2}[2]}[テスト JR北海道 2.2]
+\begin{quote}
+  これはJR北海道の第2条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHokkaido{\LawArticleNumber{2}[2]}[テスト JR北海道 2.2]
+        \begin{quote}
+          これはJR北海道の第2条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRHokkaido{\LawArticleNumber{条文番号}[枝番.枝番]}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRHokkaido{\LawArticleNumber{2}[2.2]}[テスト JR北海道 2.2.2]
+\begin{quote}
+  これはJR北海道の第2条の2の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHokkaido{\LawArticleNumber{2}[2.2]}[テスト JR北海道 2.2.2]
+        \begin{quote}
+          これはJR北海道の第2条の2の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+  \newpage
+
+  \subsection{JR東日本}
+
+  \begin{itemize}
+    \item \verb|\ArticleJREast{\LawArticleNumber{条文番号}}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJREast{\LawArticleNumber{3}}
+\begin{quote}
+  これはJR東日本の第3条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJREast{\LawArticleNumber{3}}
+        \begin{quote}
+          これはJR東日本の第3条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJREast{\LawArticleNumber{条文番号}[枝番]}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJREast{\LawArticleNumber{3}[2]}
+\begin{quote}
+  これはJR東日本の第3条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJREast{\LawArticleNumber{3}[2]}
+        \begin{quote}
+          これはJR東日本の第3条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleJREast{\LawArticleNumber{条文番号}}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJREast{\LawArticleNumber{4}}[テスト JR東日本 4]
+\begin{quote}
+  これはJR東日本の第4条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJREast{\LawArticleNumber{4}}[テスト JR東日本 4]
+        \begin{quote}
+          これはJR東日本の第4条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJREast{\LawArticleNumber{条文番号}[枝番]}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJREast{\LawArticleNumber{4}[2]}{テスト JR東日本 4.2}
+\begin{quote}
+  これはJR東日本の第4条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJREast{\LawArticleNumber{4}[2]}{テスト JR東日本 4.2}
+        \begin{quote}
+          これはJR東日本の第4条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR東海}
+
+  \begin{itemize}
+    \item \verb|\ArticleJRCentral{\LawArticleNumber{条文番号}}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRCentral{\LawArticleNumber{5}}
+\begin{quote}
+  これはJR東海の第5条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRCentral{\LawArticleNumber{5}}
+        \begin{quote}
+          これはJR東海の第5条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRCentral{\LawArticleNumber{条文番号}[枝番]}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRCentral{\LawArticleNumber{5}[2]}
+\begin{quote}
+  これはJR東海の第5条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRCentral{\LawArticleNumber{5}[2]}
+        \begin{quote}
+          これはJR東海の第5条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleJRCentral{\LawArticleNumber{条文番号}}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRCentral{\LawArticleNumber{6}}[テスト JR東海 6]
+\begin{quote}
+  これはJR東海の第6条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRCentral{\LawArticleNumber{6}}[テスト JR東海 6]
+        \begin{quote}
+          これはJR東海の第6条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRCentral{\LawArticleNumber{条文番号}[枝番]}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRCentral{\LawArticleNumber{6}[2]}[テスト JR東海 6.2]
+\begin{quote}
+  これはJR東海の第6条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRCentral{\LawArticleNumber{6}[2]}[テスト JR東海 6.2]
+        \begin{quote}
+          これはJR東海の第6条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR西日本}
+
+  \begin{itemize}
+    \item \verb|\ArticleJRWest{\LawArticleNumber{条文番号}}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRWest{\LawArticleNumber{7}}
+\begin{quote}
+  これはJR西日本の第7条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRWest{\LawArticleNumber{7}}
+        \begin{quote}
+          これはJR西日本の第7条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRWest{\LawArticleNumber{条文番号}[枝番]}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRWest{\LawArticleNumber{7}[2]}
+\begin{quote}
+  これはJR西日本の第7条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRWest{\LawArticleNumber{7}[2]}
+        \begin{quote}
+          これはJR西日本の第7条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleJRWest{\LawArticleNumber{条文番号}}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRWest{\LawArticleNumber{8}}[テスト JR西日本 8]
+\begin{quote}
+  これはJR西日本の第8条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRWest{\LawArticleNumber{8}}[テスト JR西日本 8]
+        \begin{quote}
+          これはJR西日本の第8条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRWest{\LawArticleNumber{条文番号}[枝番]}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRWest{\LawArticleNumber{8}[2]}[テスト JR西日本 8.2]
+\begin{quote}
+  これはJR西日本の第8条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRWest{\LawArticleNumber{8}[2]}[テスト JR西日本 8.2]
+        \begin{quote}
+          これはJR西日本の第8条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR四国}
+
+  \begin{itemize}
+    \item \verb|\ArticleJRShikoku{\LawArticleNumber{条文番号}}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRShikoku{\LawArticleNumber{9}}
+\begin{quote}
+  これはJR四国の第9条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRShikoku{\LawArticleNumber{9}}
+        \begin{quote}
+          これはJR四国の第9条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRShikoku{\LawArticleNumber{条文番号}[枝番]}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRShikoku{\LawArticleNumber{9}[2]}
+\begin{quote}
+  これはJR四国の第9条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRShikoku{\LawArticleNumber{9}[2]}
+        \begin{quote}
+          これはJR四国の第9条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleJRShikoku{\LawArticleNumber{条文番号}}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRShikoku{\LawArticleNumber{10}}[テスト JR四国 10]
+\begin{quote}
+  これはJR四国の第10条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRShikoku{\LawArticleNumber{10}}[テスト JR四国 10]
+        \begin{quote}
+          これはJR四国の第10条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRShikoku{\LawArticleNumber{条文番号}[枝番]}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRShikoku{\LawArticleNumber{10}[2]}[テスト JR四国 10.2]
+\begin{quote}
+  これはJR四国の第10条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRShikoku{\LawArticleNumber{10}[2]}[テスト JR四国 10.2]
+        \begin{quote}
+          これはJR四国の第10条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR九州}
+
+  \begin{itemize}
+    \item \verb|\ArticleJRKyushu{\LawArticleNumber{条文番号}}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRKyushu{\LawArticleNumber{11}}
+\begin{quote}
+  これはJR九州の第11条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRKyushu{\LawArticleNumber{11}}
+        \begin{quote}
+          これはJR九州の第11条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRKyushu{\LawArticleNumber{条文番号}[枝番]}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRKyushu{\LawArticleNumber{11}[2]}
+\begin{quote}
+  これはJR九州の第11条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRKyushu{\LawArticleNumber{11}[2]}
+        \begin{quote}
+          これはJR九州の第11条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleJRKyushu{\LawArticleNumber{条文番号}}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRKyushu{\LawArticleNumber{12}}[テスト JR九州 12]
+\begin{quote}
+  これはJR九州の第12条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRKyushu{\LawArticleNumber{12}}[テスト JR九州 12]
+        \begin{quote}
+          これはJR九州の第12条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRKyushu{\LawArticleNumber{条文番号}[枝番]}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRKyushu{\LawArticleNumber{12}[2]}[テスト JR九州 12.2]
+\begin{quote}
+  これはJR九州の第12条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRKyushu{\LawArticleNumber{12}[2]}[テスト JR九州 12.2]
+        \begin{quote}
+          これはJR九州の第12条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+
+  \newpage
+
+  \subsection{JR本州３社}
+
+  \begin{itemize}
+    \item \verb|\ArticleJRHonshu{\LawArticleNumber{条文番号}}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRHonshu{\LawArticleNumber{13}}
+\begin{quote}
+  これはJR本州3社の第13条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHonshu{\LawArticleNumber{13}}
+        \begin{quote}
+          これはJR本州3社の第13条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRHonshu{\LawArticleNumber{条文番号}[枝番]}|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRHonshu{\LawArticleNumber{13}[2]}
+\begin{quote}
+  これはJR本州3社の第13条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHonshu{\LawArticleNumber{13}[2]}
+        \begin{quote}
+          これはJR本州3社の第13条の2の内容です。
+        \end{quote}
+      \end{itembox}
+    \newpage
+    \item \verb|\ArticleJRHonshu{\LawArticleNumber{条文番号}}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRHonshu{\LawArticleNumber{14}}[テスト 本州3社 14]
+\begin{quote}
+  これはJR本州3社の第14条の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHonshu{\LawArticleNumber{14}}[テスト 本州3社 14]
+        \begin{quote}
+          これはJR本州3社の第14条の内容です。
+        \end{quote}
+      \end{itembox}
+    \item \verb|\ArticleJRHonshu{\LawArticleNumber{条文番号}[枝番]}[内容]|
+      \begin{itembox}[l]{コード}
+        {\footnotesize\begin{verbatim}
+\ArticleJRHonshu{\LawArticleNumber{14}[2]}[テスト 本州3社 14.2]
+\begin{quote}
+  これはJR本州3社の第14条の2の内容です。
+\end{quote}\end{verbatim}}
+      \end{itembox}
+      \begin{itembox}[l]{表示内容}
+        \ArticleJRHonshu{\LawArticleNumber{14}[2]}[テスト 本州3社 14.2]
+        \begin{quote}
+          これはJR本州3社の第14条の2の内容です。
+        \end{quote}
+      \end{itembox}
+  \end{itemize}
+\end{document}
