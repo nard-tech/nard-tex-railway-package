@@ -8,69 +8,77 @@
 \usepackage{packages/nard-tex-law-package/article_number}
 
 % 本州3社
-\NewDocumentCommand{\ArticleJRHonshu}{m o}{%
+\NewDocumentCommand{\ArticleJRHonshu}{m D<>{} o}{%
   \JRArticle{%
     \JREast\JRCentral\JRWest}{% ロゴ
-    #1}[% 条文番号+枝番
-    #2]% 内容
+    #1}<% 条文番号
+    #2>[% 枝番
+    #3]% 内容
 }
 
 % JR北海道
-\NewDocumentCommand{\ArticleJRHokkaido}{m o}{%
+\NewDocumentCommand{\ArticleJRHokkaido}{m D<>{} o}{%
   \JRArticle{%
     \JRHokkaido}{% ロゴ
-    #1}[% 条文番号+枝番
-    #2]% 内容
+    #1}<% 条文番号
+    #2>[% 枝番
+    #3]% 内容
 }
 
 % JR東日本
-\NewDocumentCommand{\ArticleJREast}{m o}{%
+\NewDocumentCommand{\ArticleJREast}{m D<>{} o}{%
   \JRArticle{%
     \JREast}{% ロゴ
-    #1}[% 条文番号+枝番
-    #2]% 内容
+    #1}<% 条文番号
+    #2>[% 枝番
+    #3]% 内容
 }
 
 % JR東海
-\NewDocumentCommand{\ArticleJRCentral}{m o}{%
+\NewDocumentCommand{\ArticleJRCentral}{m D<>{} o}{%
   \JRArticle{%
     \JRCentral}{% ロゴ
-    #1}[% 条文番号+枝番
-    #2]% 内容
+    #1}<% 条文番号
+    #2>[% 枝番
+    #3]% 内容
 }
 
 % JR西日本
-\NewDocumentCommand{\ArticleJRWest}{m o}{%
+\NewDocumentCommand{\ArticleJRWest}{m D<>{} o}{%
   \JRArticle{%
     \JRWest}{% ロゴ
-    #1}[% 条文番号+枝番
-    #2]% 内容
+    #1}<% 条文番号
+    #2>[% 枝番
+    #3]% 内容
 }
 
 % JR四国
-\NewDocumentCommand{\ArticleJRShikoku}{m o}{%
+\NewDocumentCommand{\ArticleJRShikoku}{m D<>{} o}{%
   \JRArticle{%
     \JRShikoku}{% ロゴ
-    #1}[% 条文番号+枝番
-    #2]% 内容
+    #1}<% 条文番号
+    #2>[% 枝番
+    #3]% 内容
 }
 
 % JR九州
-\NewDocumentCommand{\ArticleJRKyushu}{m o}{%
+\NewDocumentCommand{\ArticleJRKyushu}{m D<>{} o}{%
   \JRArticle{%
     \JRKyushu}{% ロゴ
-    #1}[% 条文番号+枝番
-    #2]% 内容
+    #1}<% 条文番号
+    #2>[% 枝番
+    #3]% 内容
 }
 
 % ---- private command ----
 
-\NewDocumentCommand{\JRArticle}{m m o}{
-  \IfNoValueTF{#3}{% if 第3引数（内容）が存在しないとき（引数が2つのとき）
+\NewDocumentCommand{\JRArticle}{m m D<>{} o}{
+  \IfNoValueTF{#4}{% if 第3引数（内容）が存在しないとき（引数が2つのとき）
     % 何もしない
   }{% else - 第3引数（内容）が存在するとき（引数が3つのとき）
     % 第2引数を条文番号、第3引数を内容とする
-    （{#3}）\\[3pt]% 内容を表示して改行
+    （{#4}）\\[3pt]% 内容を表示して改行
   }
-  #1\,#2% ロゴ、条文番号
+  #1\,% ロゴ
+  \LawArticleNumber{#2}<#3> % 条文番号+枝番
 }
