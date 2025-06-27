@@ -1,6 +1,8 @@
 [submodule "packages/nard-tex-law-package"]
 	path = packages/nard-tex-law-package
 	url = git@github.com:nard-tech/nard-tex-law-package.git
+	branch = main
 [submodule "packages/nard-tex-color-package"]
 	path = packages/nard-tex-color-package
 	url = git@github.com:nard-tech/nard-tex-color-package.git
+	branch = main
