@@ -50,3 +50,5 @@ jobs:
         if: steps.status.outputs.changed == 'yes'
         run: |
           gh pr create -B main -t "Update submodules" -b "サブモジュールの自動更新"
+        env:
+          GH_TOKEN: ${{ github.token }}
