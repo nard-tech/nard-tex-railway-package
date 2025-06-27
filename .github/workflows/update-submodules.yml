@@ -28,16 +28,16 @@ jobs:
       - name: Set branch name
         id: set-branch-name
         run: |
-          echo "BRANCH_NAME=update-github-submodules-$(CURRENT_TIME)" >> $GITHUB_ENV
+          echo "BRANCH_NAME=update-github-submodules-$CURRENT_TIME" >> $GITHUB_ENV
 
       - name: Commit changes
         if: steps.status.outputs.changed == 'yes'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git checkout -b $(BRANCH_NAME)
+          git checkout -b $BRANCH_NAME
           git add .
-          git commit -m "Update submodules at $(CURRENT_TIME)"
+          git commit -m "Update submodules at $CURRENT_TIME"
 
       - name: Push branch
         if: steps.status.outputs.changed == 'yes'
