@@ -24,7 +24,7 @@ jobs:
         id: datetime
         run: |
           echo "CURRENT_TIME=$(date '+%Y%m%d-%H%M%S')" >> $GITHUB_ENV
-          echo "BRANCH_NAME=update-github-submodules-$(BRANCH_NAME)" >> $GITHUB_ENV
+          echo "BRANCH_NAME=update-github-submodules-$(CURRENT_TIME)" >> $GITHUB_ENV
 
       - name: Commit changes
         if: steps.status.outputs.changed == 'yes'
