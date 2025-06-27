@@ -21,9 +21,13 @@ jobs:
         run: echo "changed=$(git status --porcelain | grep -q . && echo 'yes' || echo 'no')" >> $GITHUB_OUTPUT
 
       - name: Get current datetime
-        id: datetime
+        id: get-datetime
         run: |
           echo "CURRENT_TIME=$(date '+%Y%m%d-%H%M%S')" >> $GITHUB_ENV
+
+      - name: Set branch name
+        id: set-branch-name
+        run: |
           echo "BRANCH_NAME=update-github-submodules-$(CURRENT_TIME)" >> $GITHUB_ENV
 
       - name: Commit changes
