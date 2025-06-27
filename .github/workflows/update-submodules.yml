@@ -1,0 +1,51 @@
+name: Update submodules
+on:
+  workflow_dispatch:
+jobs:
+  update_submodules:
+    name: Update submodules
+    runs-on: ubuntu-latest
+    env:
+      TZ: "Asia/Tokyo"
+    if: contains(github.event.head_commit.message, '[ci skip]') == false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Update submodules
+        run: git submodule update --remote --recursive
+
+      - name: Check for changes
+        id: status
+        run: echo "changed=$(git status --porcelain | grep -q . && echo 'yes' || echo 'no')" >> $GITHUB_OUTPUT
+
+      - name: Get current datetime
+        id: datetime
+        run: echo "BRANCH_NAME=update-github-submodules-$(date '+%Y%m%d-%H%M%S')" >> $GITHUB_ENV
+
+      - name: Commit changes
+        if: steps.status.outputs.changed == 'yes'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout -b $BRANCH_NAME
+          git add .
+          git commit -m "Update submodules at $(date '+DATE: %Y-%m-%d TIME: %H:%M:%S')"
+
+      - name: Push branch
+        if: steps.status.outputs.changed == 'yes'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH_NAME }}
+
+      - name: Create Pull Request
+        if: steps.status.outputs.changed == 'yes'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH_NAME }}
+          title: "Update submodules"
+          body: "サブモジュールの自動更新"
+          base: main
