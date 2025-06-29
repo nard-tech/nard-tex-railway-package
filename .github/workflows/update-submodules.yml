@@ -64,6 +64,6 @@ jobs:
       - name: Create Pull Request
         if: steps.set-git-status.outputs.CHANGED == 'yes'
         run: |
-          gh pr create -B main -t "Update submodules" -b "サブモジュールの自動更新"
+          gh pr create -B main -t "Update submodules" -b "サブモジュールの自動更新" --head $(git branch --show-current)
         env:
           GH_TOKEN: ${{ github.token }}
