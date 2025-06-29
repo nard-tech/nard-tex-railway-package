@@ -16,22 +16,37 @@ jobs:
       - name: Update submodules
         run: git submodule update --remote --recursive
 
-      - name: Check for changes
-        id: status
-        run: echo "changed=$(git status --porcelain | grep -q . && echo 'yes' || echo 'no')" >> $GITHUB_OUTPUT
+      - name: Set Git status
+        id: set-git-status
+        run: echo "CHANGED=$(git status --porcelain | grep -q . && echo 'yes' || echo 'no')" >> $GITHUB_OUTPUT
 
       - name: Get current datetime
-        id: get-datetime
+        id: set-datetime
         run: |
-          echo "CURRENT_TIME=$(date '+%Y%m%d-%H%M%S')" >> $GITHUB_ENV
+          echo "CURRENT_TIME=$(date '+%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
 
       - name: Set branch name
         id: set-branch-name
+        env:
+          CURRENT_TIME: ${{ steps.set-datetime.outputs.CURRENT_TIME }}
         run: |
-          echo "BRANCH_NAME=update-github-submodules-$CURRENT_TIME" >> $GITHUB_ENV
+          echo "BRANCH_NAME=update-github-submodules-$CURRENT_TIME" >> $GITHUB_OUTPUT
+      - name: Check GitHub output
+        id: check-github-output
+        env:
+          CHANGED: ${{ steps.set-git-status.outputs.CHANGED }}
+          CURRENT_TIME: ${{ steps.set-datetime.outputs.CURRENT_TIME }}
+          BRANCH_NAME: ${{ steps.set-branch-name.outputs.BRANCH_NAME }}
+        run: |
+          echo CHANGED: $CHANGED
+          echo CURRENT_TIME: $CURRENT_TIME
+          echo BRANCH_NAME: $BRANCH_NAME
 
       - name: Commit changes
-        if: steps.status.outputs.changed == 'yes'
+        if: steps.set-git-status.outputs.CHANGED == 'yes'
+        env:
+          CURRENT_TIME: ${{ steps.set-datetime.outputs.CURRENT_TIME }}
+          BRANCH_NAME: ${{ steps.set-branch-name.outputs.BRANCH_NAME }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -40,14 +55,14 @@ jobs:
           git commit -m "Update submodules at $CURRENT_TIME"
 
       - name: Push branch
-        if: steps.status.outputs.changed == 'yes'
+        if: steps.set-git-status.outputs.CHANGED == 'yes'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ env.BRANCH_NAME }}
+          branch: ${{ steps.set-branch-name.outputs.BRANCH_NAME }}
 
       - name: Create Pull Request
-        if: steps.status.outputs.changed == 'yes'
+        if: steps.set-git-status.outputs.CHANGED == 'yes'
         run: |
           gh pr create -B main -t "Update submodules" -b "サブモジュールの自動更新"
         env:
